@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: position-tracker
-        image: ${REPOSITORY_TAG}
+        image: 788000630483.dkr.ecr.us-east-1.amazonaws.com/fleetman-position-tracker:0
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
