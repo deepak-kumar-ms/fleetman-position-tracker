@@ -22,7 +22,7 @@ pipeline {
       }
       stage('Checkout from Git') {
             steps {
-                git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
+                git credentialsId: 'gitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
             }
       }
 
