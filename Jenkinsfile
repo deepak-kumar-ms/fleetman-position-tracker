@@ -3,11 +3,11 @@ pipeline {
 
     environment {
         // You must set the following environment variables
-        SCANNER_HOME = tool 'sonar-scanner'
+        // SCANNER_HOME = tool 'sonar-scanner'
         AWS_ACCOUNT_ID = credentials('ACCOUNT_ID')
         AWS_ECR_REPO_NAME = credentials('ECR_REPO_POSITION_TRACKER')
         AWS_DEFAULT_REGION = 'us-east-1'
-        ORGANIZATION_NAME = "fleetman-k8s-ci"
+        ORGANIZATION_NAME = "deepak-kumar-m"
         SERVICE_NAME = "fleetman-position-tracker"
             
         REPOSITORY_TAG = "${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
@@ -73,13 +73,13 @@ pipeline {
         stage('Update Deployment file') {
             environment {
                 GIT_REPO_NAME = "fleetman-position-tracker"
-                GIT_ORG_NAME = "fleetman-k8s-ci"
+                GIT_ORG_NAME = "deepak-kumar-m"
             }
             steps {
                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                     sh '''
-                        git config user.email "deepaktyagi048@gmail.com"
-                        git config user.name "deeepak-tyagii"
+                        git config user.email "dksasi77@gmail"
+                        git config user.name "DKSASI2003"
                         BUILD_NUMBER=${BUILD_NUMBER}
                         echo $BUILD_NUMBER
                         imageTag=$(grep -oP '(?<=fleetman-position-tracker:)[^ ]+' deploy.yaml)
