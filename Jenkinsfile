@@ -7,7 +7,7 @@ pipeline {
         AWS_ACCOUNT_ID = credentials('ACCOUNT_ID')
         AWS_ECR_REPO_NAME = credentials('ECR_REPO_POSITION_TRACKER')
         AWS_DEFAULT_REGION = 'us-east-1'
-        ORGANIZATION_NAME = "deepak-kumar-m"
+        ORGANIZATION_NAME = "deepak-kumar-ms"
         SERVICE_NAME = "fleetman-position-tracker"
             
         REPOSITORY_TAG = "${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
@@ -73,7 +73,7 @@ pipeline {
         stage('Update Deployment file') {
             environment {
                 GIT_REPO_NAME = "fleetman-position-tracker"
-                GIT_ORG_NAME = "deepak-kumar-m"
+                GIT_ORG_NAME = "deepak-kumar-ms"
             }
             steps {
                 withCredentials([string(credentialsId: 'Github', variable: 'GITHUB_TOKEN')]) {
