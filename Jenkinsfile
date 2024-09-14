@@ -66,7 +66,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
+                git credentialsId: 'Github', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
             }
         }
 
@@ -76,7 +76,7 @@ pipeline {
                 GIT_ORG_NAME = "deepak-kumar-m"
             }
             steps {
-                withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+                withCredentials([string(credentialsId: 'Github', variable: 'GITHUB_TOKEN')]) {
                     sh '''
                         git config user.email "dksasi77@gmail"
                         git config user.name "DKSASI2003"
